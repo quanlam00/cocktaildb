@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">The Cocktail DB</string>
+    <string name="the_cocktail_db">Thirsty</string>
+    <string name="find_a_drink">Find a drink</string>
+    <string name="drink_icon">Drink Icon</string>
+    <string name="ingredients">Ingredients:</string>
+    <string name="back">Back</string>
+</resources>

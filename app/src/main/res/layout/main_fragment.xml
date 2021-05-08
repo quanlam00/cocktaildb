@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainFragment">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/oat"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/the_cocktail_db" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/vertical_small"
+        android:padding="10dp"
+        android:background="@drawable/rounded_oat_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:inputType="text"
+        android:hint="@string/find_a_drink"
+        android:autofillHints="@string/find_a_drink" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/alphabetList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/vertical_small"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/filteredList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/vertical_small"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="oat">#FFCCCCCC</color>
+    <color name="oat_200">#FFAAAAAA</color>
+    <color name="oat_700">#FF999999</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="yellow">#FFF7F6CF</color>
+    <color name="pale_turquoise">#B6D8F2</color>
+    <color name="linen">#F4CFDF</color>
+    <color name="steel_blue">#5784BA</color>
+    <color name="sky_blue">#9AC8EB</color>
+    <color name="pale_leaf">#CCD4BF</color>
+    <color name="burly_wood">#E7CBA9</color>
+    <color name="zinnwaldite">#EEBAB2</color>
+    <color name="ecru_white">#F5F3E7</color>
+    <color name="vanilla_ice">#F5E2E4</color>
+    <color name="sea_green">#218B82</color>
+    <color name="light_blue">#9AD9DB</color>
+    <color name="gainsboro">#E5D8D9</color>
+    <color name="dark_sea_green">#98D4BB</color>
+    <color name="pink">#EB96AA</color>
+</resources>
