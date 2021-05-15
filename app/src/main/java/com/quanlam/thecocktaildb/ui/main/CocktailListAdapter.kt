@@ -1,4 +1,4 @@
-package com.quanlam.thecocktaildb.ui
+package com.quanlam.thecocktaildb.ui.main
 
 import android.view.LayoutInflater
 import android.view.View

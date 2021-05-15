@@ -2,7 +2,7 @@ package com.quanlam.thecocktaildb
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.quanlam.thecocktaildb.ui.MainFragment
+import com.quanlam.thecocktaildb.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

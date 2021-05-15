@@ -1,7 +1,7 @@
 package com.quanlam.thecocktaildb.dataservice.model
 
 import com.google.gson.annotations.SerializedName
-import com.quanlam.thecocktaildb.ui.IngredientListItem
+import com.quanlam.thecocktaildb.ui.detail.IngredientListItem
 
 data class Drink(
     val dateModified: String?,

@@ -1,4 +1,4 @@
-package com.quanlam.thecocktaildb.ui
+package com.quanlam.thecocktaildb.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,6 +13,7 @@ class MainViewModel : ViewModel() {
     //LiveData is used to broadcast changes from ViewModel to UI elements
     val liveDrinkList: MutableLiveData<List<CocktailListItem>> = MutableLiveData(drinkList)
     val liveFilteredList: MutableLiveData<List<CocktailListItem>> = MutableLiveData(filteredList)
+    val liveLoadingState = MutableLiveData(false)
     private val compositeDisposable = CompositeDisposable()
 
     var currentAlphabet = 'a'
@@ -24,6 +25,7 @@ class MainViewModel : ViewModel() {
     //Each call will bring current alphabet to next character
     @Synchronized
     fun getMoreCocktails() {
+        liveLoadingState.postValue(true)
         synchronized(getMoreLock) {
             if (currentAlphabet <= 'z' && !getMoreLock) {
                 getMoreLock = true
@@ -46,6 +48,7 @@ class MainViewModel : ViewModel() {
                             }
                             liveDrinkList.postValue(drinkList)
                             getMoreLock = false
+                            liveLoadingState.postValue(false)
                         }
                     }, {
                         it.printStackTrace()
@@ -61,6 +64,7 @@ class MainViewModel : ViewModel() {
     // Otherwise ignore the data.
     private var currentSearch = ""
     fun searchCocktailByName(name: String) {
+        liveLoadingState.postValue(true)
         synchronized(currentSearch) {
             currentSearch = name
             val disposable =
@@ -82,6 +86,7 @@ class MainViewModel : ViewModel() {
                                     )
                                 }
                                 liveFilteredList.postValue(filteredList)
+                                liveLoadingState.postValue(false)
                             }
                         }
                     }, {
@@ -93,6 +98,7 @@ class MainViewModel : ViewModel() {
 
     fun cancelSearch() {
         currentSearch = ""
+        liveLoadingState.postValue(false)
     }
 
     fun onDestroy() {

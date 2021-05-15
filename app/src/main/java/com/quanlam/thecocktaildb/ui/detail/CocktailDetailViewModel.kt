@@ -1,4 +1,4 @@
-package com.quanlam.thecocktaildb.ui
+package com.quanlam.thecocktaildb.ui.detail
 
 import androidx.lifecycle.ViewModel
 import com.quanlam.thecocktaildb.dataservice.CocktailDBService

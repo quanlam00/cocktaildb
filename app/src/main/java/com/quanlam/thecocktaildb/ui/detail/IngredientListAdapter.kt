@@ -1,4 +1,4 @@
-package com.quanlam.thecocktaildb.ui
+package com.quanlam.thecocktaildb.ui.detail
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -28,7 +28,8 @@ class IngredientListAdapter(
         context.get()?.let {
             val item = mValues[position]
             if (item.amount.isNotEmpty()) {
-                holder.mNameText.text = "${item.name} (${item.amount})"
+                val text = "${item.name} (${item.amount})"
+                holder.mNameText.text = text
             } else {
                 holder.mNameText.text = item.name
             }
@@ -37,8 +38,9 @@ class IngredientListAdapter(
             holder.mImage.setImageDrawable(ContextCompat.getDrawable(
                 context.get()!!,
                 IngredientColorUtil.getColorForNumber(
-                    (position + drinkId)%15
-                )))
+                    (position + drinkId) % 15
+                )
+            ))
         }
     }
 

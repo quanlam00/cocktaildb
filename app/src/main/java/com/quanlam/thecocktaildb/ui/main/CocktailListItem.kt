@@ -1,4 +1,4 @@
-package com.quanlam.thecocktaildb.ui
+package com.quanlam.thecocktaildb.ui.main
 
 data class CocktailListItem(val name: String,
                             val imageUrl: String,

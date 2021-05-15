@@ -1,4 +1,4 @@
-package com.quanlam.thecocktaildb.ui
+package com.quanlam.thecocktaildb.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +12,8 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.quanlam.thecocktaildb.databinding.CocktailDetailFragmentBinding
 import com.quanlam.thecocktaildb.dataservice.model.toOz
+import com.quanlam.thecocktaildb.ui.extension.hideProgress
+import com.quanlam.thecocktaildb.ui.extension.showProgress
 import com.squareup.picasso.Picasso
 
 class CocktailDetailFragment(
@@ -40,6 +42,7 @@ class CocktailDetailFragment(
         //Init view model
         viewModel = ViewModelProvider(this).get(CocktailDetailViewModel::class.java)
         //Get some cocktails
+        showProgress()
         viewModel.getDrinkDetail(cocktailId, this::onDrinkFetched)
         binding?.backButton?.setOnClickListener {
             activity?.onBackPressed()
@@ -53,6 +56,9 @@ class CocktailDetailFragment(
         populateIngredientsList()
         binding?.instructionText?.text = viewModel.drink?.strInstructions
         createPieChart()
+        binding?.drinkIconLayout?.visibility = View.VISIBLE
+        binding?.chart?.visibility = View.VISIBLE
+        hideProgress()
     }
 
     private fun populateIngredientsList() {

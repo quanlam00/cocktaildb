@@ -1,4 +1,4 @@
-package com.quanlam.thecocktaildb.ui
+package com.quanlam.thecocktaildb.ui.detail
 
 import com.quanlam.thecocktaildb.R
 

@@ -1,4 +1,4 @@
-package com.quanlam.thecocktaildb.ui
+package com.quanlam.thecocktaildb.ui.main
 
 import android.os.Bundle
 import android.text.Editable
@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.quanlam.thecocktaildb.R
 import com.quanlam.thecocktaildb.databinding.MainFragmentBinding
+import com.quanlam.thecocktaildb.ui.detail.CocktailDetailFragment
+import com.quanlam.thecocktaildb.ui.extension.setUpProgressBar
 
 class MainFragment : Fragment(), OnCocktailItemClickListener {
 
@@ -63,6 +65,7 @@ class MainFragment : Fragment(), OnCocktailItemClickListener {
 
         setupRecyclerViews()
         setupInfiniteScrolling()
+        setUpProgressBar(viewModel.liveLoadingState)
     }
 
     private fun setupRecyclerViews() {
